@@ -1,6 +1,7 @@
 import './styles/global.css'
 import { Header } from './compornents/Header'
 import { SummaryTable } from './compornents/SummaryTable'
+import './lib/dayjs'
 
 //import Habit from './compornents/Habit'
 

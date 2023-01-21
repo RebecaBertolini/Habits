@@ -1,14 +1,33 @@
+import dayjs from "dayjs"
+import { useEffect, useState } from "react"
+import { api } from "../lib/axios"
 import { generateDatesFromYearBegginning } from "../utils/generate-dates-from-year-beggining"
 import HabitDay from "./HabitDay"
 
+const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
+
+const summaryDates = generateDatesFromYearBegginning()
+
+const minimumSummaryDatesSize = 18 * 7
+const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length
+
+type Summary = Array<{
+    id: string;
+    date: string;
+    amount: number;
+    completed: number;
+}>
 
 export function SummaryTable() {
-    const weekDays = ['D', 'S', 'T', 'Q', 'Q', 'S', 'S']
 
-    const summaryDates = generateDatesFromYearBegginning()
+    const [summary, setSummary] = useState<Summary>([])
 
-    const minimumSummaryDatesSize = 18 * 7
-    const amountOfDaysToFill = minimumSummaryDatesSize - summaryDates.length
+    useEffect(() => {
+        api.get('/summary').then(response => {
+            setSummary(response.data)
+        })
+    }, [])
+
 
     return (
         <div className="w-full flex">
@@ -26,18 +45,23 @@ export function SummaryTable() {
 
             <div className="grid grid-rows-7 grid-flow-col gap-3">
                 {summaryDates.map(date => {
+
+                    const dayInSummary = summary.find(day => {
+                        return dayjs(date).isSame(day.date, 'day')
+                    })
+
                     return (
-                        <HabitDay amount={10} amountCompleted={Math.round((Math.random() * 10))} key={date.toString()}/>
+                        <HabitDay amount={dayInSummary?.amount } amountCompleted={dayInSummary?.completed} date={date} key={date.toString()} />
                     )
                 })}
 
-                {amountOfDaysToFill > 0 && Array.from({length: amountOfDaysToFill }).map((_, i) => {
+                {amountOfDaysToFill > 0 && Array.from({ length: amountOfDaysToFill }).map((_, i) => {
                     return (
                         <div key={i} className="w-10 h-10 bg-zinc-900 border-2 border-zinc-800 rounded-lg opacity-40 cursor-not-allowed">
 
                         </div>
                     )
-                }) }
+                })}
             </div>
         </div >
     )
