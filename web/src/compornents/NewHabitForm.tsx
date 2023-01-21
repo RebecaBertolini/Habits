@@ -5,11 +5,11 @@ import { api } from "../lib/axios";
 
 const availableWeekDays = ['Domingo', 'Segunda-feira', 'Terça-feira', 'Quarta-feira', 'Quinta-feira', 'Sexta-feira', 'Sábado']
 
-export function NewHabitForm(event: FormEvent) {
+export function NewHabitForm() {
     const [title, setTitle] = useState('');
     const [weekDays, setWeekDays] = useState<number[]>([])
 
-    function createNewHabit() {
+    function createNewHabit(event: FormEvent) {
         event.preventDefault()
         
         if(!title || weekDays.length == 0) {
@@ -54,7 +54,7 @@ export function NewHabitForm(event: FormEvent) {
                             <Checkbox.Root
                                 key={weekDay}
                                 className="flex items-center gap-3 group"
-                                checked={weekDays.includes(i)}
+                                checked={(weekDays.includes(i))}
                                 onCheckedChange={() => HandleToggleWeekDay(i)}
 
                             >
