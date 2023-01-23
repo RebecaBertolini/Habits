@@ -16,7 +16,7 @@ export function New(){
         try {
             //trim remove os espacos para a verificacao
             if(!title.trim() || weekDays.length === 0){
-                Alert.alert('Novo hábito', 'Informe um novo hábito e escolha e periodicidade.')
+               return Alert.alert('Novo hábito', 'Informe um novo hábito e escolha e periodicidade.')
             }
 
             await api.post('/habits', {
