@@ -16,7 +16,10 @@ Projeto desenvolvido durante a NLW - Setup | Trilha Ignite oferecido pela Rocket
 
 O layout da aplicação está disponível no Figma:
 
-<img src="https://img.shields.io/static/v1?label=Layout&message=Figma&color=7159c1&style=for-the-badge&logo=ghost"/>
+<a href="https://www.figma.com/file/2RTFZFFEkVEHGmgFD7U5lz/Habits-(i)-(Community)?node-id=6%3A343&t=K9XrO2Rw9k3tct2z-1">
+  <img src="https://img.shields.io/static/v1?label=Layout&message=Figma&color=7159c1&style=for-the-badge&logo=ghost"/>
+</a>
+
 
 ### Mobile
  
