@@ -2,27 +2,11 @@
     <img alt="Habits" title="" src=".github/banner.png" />
 </h1>
 
-# Habits
-
 ## Descrição do projeto:
-[#Descricao]
 
 Habits é um aplicativo de registro e controle de hábitos no qual o usuário é capaz de registrar novos hábitos, concluí-los no seu dia atual e visualizar posteriormente seus hábitos registrados que foram completados ou não, mantendo um controle visual do seu progresso.
 
-
 Projeto desenvolvido durante a NLW - Setup | Trilha Ignite oferecido pela Rocketseat. O NLW é uma experiência online com muito conteúdo prático, desafios e hacks onde o conteúdo fica disponível durante uma semana.
-
-Tabela de conteúdos
-=================
-<!--ts-->
-   * [Descrição](#Descricao)
-<!--te-->
-
-### Features
-
-- [x] Criação de Hábitos
-- [x] Registro de hábitos criados
-- [x] Registro de hábitos completados e não completados
 
 ## Layout 
 
