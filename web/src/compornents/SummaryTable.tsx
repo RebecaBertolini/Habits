@@ -52,8 +52,10 @@ export function SummaryTable() {
 
                     return (
                         <HabitDay amount={dayInSummary?.amount } defaultCompleted={dayInSummary?.completed} date={date} key={date.toString()} />
+                        
                     )
                 })}
+
 
                 {amountOfDaysToFill > 0 && Array.from({ length: amountOfDaysToFill }).map((_, i) => {
                     return (
