@@ -86,6 +86,9 @@ $ cd server
 # Instale as dependências
 $ npm install
 
+#Para visualizar as tabelas de dados
+$npx prisma studio
+
 # Execute a aplicação
 $ npm run dev
 
